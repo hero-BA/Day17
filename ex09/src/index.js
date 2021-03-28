@@ -1,48 +1,44 @@
 // Lodash
-const _ = require('lodash');
+const _ = require("lodash");
 
 // Only change code below this line
 // users nested array with four objects starts here
 var users = [
-    { id: 1, firstName: "John", lastName: "Doe", age: 24, gender: "male" },
-    { id: 2, firstName: "Jane", lastName: "Doe", age: 5, gender: "female" },
-    { id: 3, firstName: "Jim", lastName: "Carrey", age: 54, gender: "male" },
-    { id: 4, firstName: "Kate", lastName: "Winslet", age: 40, gender: "female" },
-  ];
-
+  { id: 1, firstName: "John", lastName: "Doe", age: 24, gender: "male" },
+  { id: 2, firstName: "Jane", lastName: "Doe", age: 5, gender: "female" },
+  { id: 3, firstName: "Jim", lastName: "Carrey", age: 54, gender: "male" },
+  { id: 4, firstName: "Kate", lastName: "Winslet", age: 40, gender: "female" },
+];
 // users nested array with four objects ends here
 
-// getUser function - list of users starts here
+//getUser function - list of users starts here
 
 function getUsers() {
-    var output = "";
-    for(var i in users) {      
-          for(var j in users[i]) {
-              console.log(users[i][j]);  
-              output = users[i][j];     
-          }
-        }  
-    return output;
-  }
+  var output = "";
 
+  for (let i = 0; i < users.length; i++) {
+    output += `${users[i].id} - ${users[i].firstName} ${users[i].lastName} is ${users[i].age}, ${users[i].gender} \n`;
+  }
+  return output;
+}
 
 // getUser function - list of users ends here
 
-// findUser(id) function starts here
+// findUser (id) function starts here
 function findUserById(id) {
-    try {
+  try {
+    // add appropriate code here
+    var user = _.find(users, { id });
+    var iFindUser = `${user.id} - ${user.firstName} ${user.lastName} is ${user.age}, ${user.gender}`;
 
-        // add appropriate code here
-
-    } catch (error) {
-        return "Cannot read property 'id'" // Change this line
-        console.log(); // Change this line
-    }
+    return iFindUser;
+  } catch (error) {
+    return `Cannot read property id`; // Change this line
+  }
 }
-
-// findUserById(id) functions ends here
+// findUserById(id) function ends here
 // Only change code above this line
 getUsers();
-findUserById();  // Change this line
+console.log(findUserById(1)); // Change this line
 
 module.exports = findUserById;
