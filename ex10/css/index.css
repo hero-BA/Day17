@@ -46,11 +46,11 @@ h1 {
   padding-bottom: 3rem;
 }
 
-#signin #logo {
+#signin .logo {
   margin-bottom: 8vh;
 }
 
-#signin #logo img {
+#signin .logo img {
   width: 300px;
 }
 
@@ -89,17 +89,17 @@ h1 {
   text-align: center;
 }
 
-#signin #secondary-btn,
+#signin .secondary-btn,
 #links,
-#hr-bar {
+.hr-bar {
   width: 80%;
 }
 
-#hr-bar {
+.hr-bar {
   margin-bottom: 1.2rem;
 }
 
-#signin #secondary-btn {
+#signin .secondary-btn {
   padding: 0.7rem 1rem;
   height: 2.7rem;
   display: block;
@@ -131,7 +131,7 @@ h1 {
   text-align: center;
 }
 
-#showcase #showcase-text {
+#showcase .showcase-text {
   font-size: 3rem;
   width: 100%;
   color: #fff;
@@ -171,28 +171,28 @@ h1 {
 }
 
 @media (max-width: 768px) {
-     body {
-         overflow: auto;
-     }
-     
-     #right {
-         display: none;
-     }
+  body {
+    overflow: auto;
+  }
 
-     #left {
-         justify-content: start;
-         margin-top: 4vh;
-     }
+  #right {
+    display: none;
+  }
 
-     #signin #logo {
-         margin-bottom: 2vh;
-     }
+  #left {
+    justify-content: start;
+    margin-top: 4vh;
+  }
 
-     #signin .text-input {
-         margin-bottom: 0.7rem;
-     }
+  #signin #logo {
+    margin-bottom: 2vh;
+  }
 
-     #main-footer {
-         padding-top: 1rem;
-     }
- }
+  #signin .text-input {
+    margin-bottom: 0.7rem;
+  }
+
+  #main-footer {
+    padding-top: 1rem;
+  }
+}
