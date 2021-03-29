@@ -17,12 +17,10 @@ var users = [
 
 function getUsers() {
   var output = "";
-  for(var i in users) {      
-        for(var j in users[i]) {
-            console.log(users[i][j]);  
-            output = users[i][j];     
-        }
-      }  
+  for (let i = 0; i < users.length; i++) {
+    output += `${users[i].firstName} ${users[i].lastName} is ${users[i].age}, ${users[i].gender} \n`;
+  }
+  console.log(output);
   return output;
 }
 
@@ -32,15 +30,19 @@ function getUsers() {
 function findUser(lastName, gender) {
   try {
     // add appropriate code here
+    var user = _.find(users, { lastName, gender });
+    var iFindUser = `${user.firstName} ${user.lastName} is ${user.age}, ${user.gender}`;
+
+    return iFindUser;
   } catch (error) {
     return "Cannot read property 'firstName' of undefined"; // Change this line
-    console.log(); // Change this line
   }
 }
 
 // findUser(lastName, gender) functions ends here
 // Only change code above this line
 getUsers();
-findUser(); // Change this line
+console.log(findUser("Doe", "male"));
+findUser("Doe", "male"); // Change this line
 
 module.exports = findUser;
